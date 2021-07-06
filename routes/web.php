@@ -3,6 +3,8 @@
 use App\Models\Hotel;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HotelController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/hotel', function () {
-    return Hotel::where('parent_id',141)->get();
-});
+Route::get('/hotel', [HotelController::class,'getHotel']);
+Route::get('/hotel/map/{id}', [HotelController::class,'mapHotel'])->name('map_hotel');

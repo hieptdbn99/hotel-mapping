@@ -60,7 +60,7 @@ class HotelMapping extends Command
                                     }
                                 }
                             }
-                            if ($dup / count($arr1) == 1 && $dup / count($arr2) > 0.6) {
+                            if ($dup / count($arr1) == 1 && $dup / count($arr2) > 0.8) {
                                 $hotel->parent_id = $hotel_asc->parent_id;
                                 $hotel->save();
                             }
